@@ -42,7 +42,10 @@ public class SubwayMapActivity extends AppCompatActivity {
     public String targetStation;
     private Cursor c = null; // db 커서
     private Bitmap bitmap;  // imageView의 bitmap
-    private Bitmap drawBitmap;
+    private Bitmap elevatorBitmap;
+    private Bitmap liftBitmap;
+    private boolean checkE = true;
+    private boolean checkL = true;
     private GestureDetector detector;
     final public String[] versionArray = new String[]{"출발", "경유", "도착"};
     private Button button1;
@@ -167,34 +170,30 @@ public class SubwayMapActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                drawBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
-                Canvas canvas = new Canvas(drawBitmap);
-
-                Paint paint = new Paint();
-                paint.setColor(Color.GREEN);
-                paint.setStrokeWidth(30f);
-
-                canvas.drawBitmap(bitmap,0,0, paint);
-
-                RectF rectf = new RectF();
-                if (c.moveToFirst()) {
-                    do {
-                        if (c.getInt(6) == 1) {
-                            rectf.set(c.getInt(2), c.getInt(3), c.getInt(4), c.getInt(5));
-                            canvas.drawArc(rectf, 0, 360, true, paint);
-                        }
-                    } while (c.moveToNext());
+                if(checkE) {
+                    elevatorBitmap = makeEle(bitmap, elevatorBitmap);
+                    imageView.setImage(ImageSource.bitmap(elevatorBitmap));
+                    checkE = false;
+                } else {
+                    bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.naver_subway);
+                    imageView.setImage(ImageSource.bitmap(bitmap));
+                    checkE = true;
                 }
-
-                imageView.setImage(ImageSource.bitmap(drawBitmap));
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(checkL) {
+                    liftBitmap = makeLift(bitmap, liftBitmap);
+                    imageView.setImage(ImageSource.bitmap(liftBitmap));
+                    checkL = false;
+                } else {
+                    bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.naver_subway);
+                    imageView.setImage(ImageSource.bitmap(bitmap));
+                    checkL = true;
+                }
             }
         });
 
@@ -211,6 +210,50 @@ public class SubwayMapActivity extends AppCompatActivity {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public Bitmap makeEle(Bitmap original, Bitmap copy) {
+        copy = Bitmap.createBitmap(original.getWidth(), original.getHeight(), original.getConfig());
+        Canvas canvas = new Canvas(copy);
+
+        Paint paint = new Paint();
+        paint.setColor(Color.GREEN);
+        paint.setStrokeWidth(30f);
+
+        canvas.drawBitmap(original,0,0, paint);
+        RectF rectf = new RectF();
+        if (c.moveToFirst()) {
+            do {
+                if (c.getInt(6) == 1) {
+                    rectf.set(c.getInt(2), c.getInt(3), c.getInt(4), c.getInt(5));
+                    canvas.drawArc(rectf, 0, 360, true, paint);
+                }
+            } while (c.moveToNext());
+        }
+
+        return copy;
+    }
+
+    public Bitmap makeLift(Bitmap original, Bitmap copy) {
+        copy = Bitmap.createBitmap(original.getWidth(), original.getHeight(), original.getConfig());
+        Canvas canvas = new Canvas(copy);
+
+        Paint paint = new Paint();
+        paint.setColor(Color.GREEN);
+        paint.setStrokeWidth(30f);
+
+        canvas.drawBitmap(original,0,0, paint);
+        RectF rectf = new RectF();
+        if (c.moveToFirst()) {
+            do {
+                if (c.getInt(7) == 1) {
+                    rectf.set(c.getInt(2), c.getInt(3), c.getInt(4), c.getInt(5));
+                    canvas.drawArc(rectf, 0, 360, true, paint);
+                }
+            } while (c.moveToNext());
+        }
+
+        return copy;
     }
 
 }
