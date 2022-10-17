@@ -34,13 +34,18 @@
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_arrow_outward_24.xml" value="0.229" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_change_circle_36.xml" value="0.229" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1935" />
+        <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_destination_pin_24.xml" value="0.259" />
+        <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_flag_destination_24.xml" value="0.259" />
+        <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_flag_source_24.xml" value="0.2385" />
+        <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_flag_via_24.xml" value="0.259" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_baseline_my_location_24.xml" value="0.222" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_electric_station_48.xml" value="0.186" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_main_findroad.xml" value="0.1" />
         <entry key="..\:/HelpYou/app/src/main/res/drawable/ic_navigation_common_menu.xml" value="0.1235" />
-        <entry key="..\:/HelpYou/app/src/main/res/drawable/shape_for_circle_button.xml" value="0.2385" />
+        <entry key="..\:/HelpYou/app/src/main/res/drawable/shape_for_circle_button.xml" value="0.264" />
         <entry key="..\:/HelpYou/app/src/main/res/font/fontstyle.xml" value="0.14166666666666666" />
+        <entry key="..\:/HelpYou/app/src/main/res/layout/activity_floatingmenu_layout.xml" value="0.2223731884057971" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/activity_main_to_findroad.xml" value="0.264" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/activity_recent_area.xml" value="0.2526041666666667" />
@@ -59,7 +64,8 @@
         <entry key="..\:/HelpYou/app/src/main/res/layout/navigation_bookmark.xml" value="0.152" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/navigation_header.xml" value="0.253125" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/navigation_setting.xml" value="0.2526041666666667" />
-        <entry key="..\:/HelpYou/app/src/main/res/layout/navigation_subwaymap.xml" value="0.536" />
+        <entry key="..\:/HelpYou/app/src/main/res/layout/navigation_subwaymap.xml" value="0.176" />
+        <entry key="..\:/HelpYou/app/src/main/res/layout/subway_quickaction.xml" value="0.25" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/tab_fragment_area.xml" value="0.1" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/tab_fragment_bus.xml" value="0.25364583333333335" />
         <entry key="..\:/HelpYou/app/src/main/res/layout/tab_fragment_route.xml" value="0.2526041666666667" />
