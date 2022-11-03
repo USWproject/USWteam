@@ -158,8 +158,13 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
                     startActivity(new Intent(getApplicationContext(), BookmarkActivity.class));
                 }
                 //지하철 노선도 선택시
+
+                if(id == R.id.item_subway_map) {
+                    startActivity(new Intent(getApplicationContext(), SubwayMapActivity.class));
+
                 if (id == R.id.item_subway_map) {
                     startActivity(new Intent(getApplicationContext(), SubwayMapActivity.class));
+
                 }
                 //설정 선택시
                 if (id == R.id.item_setting) {
