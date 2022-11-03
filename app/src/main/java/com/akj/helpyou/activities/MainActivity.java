@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
                 }
                 //지하철 노선도 선택시
                 if(id == R.id.item_subway_map) {
-                    startActivity(new Intent(getApplicationContext(), SubwayMapActivity.class));
+                    startActivity(new Intent(getApplicationContext(), com.akj.helpyou.activities.SubwayMapActivity.class));
                 }
                 //설정 선택시
                 if(id == R.id.item_setting) {
