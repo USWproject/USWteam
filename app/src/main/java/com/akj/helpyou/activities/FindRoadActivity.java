@@ -33,6 +33,7 @@ public class FindRoadActivity extends Activity {
         startText.setInputType(0);
         endText.setInputType(0);
 
+
         startText.setOnClickListener( //출발지 EditText버튼 클릭시
                 new View.OnClickListener() {
                     @Override
@@ -91,7 +92,12 @@ public class FindRoadActivity extends Activity {
             }
         });
 
+        //MainActivity에서 마커로 눌러서 와졌을때
+        if(getIntent().hasExtra("startPoint") && getIntent().hasExtra("endPoint")){
+            startText.setText(getIntent().getStringExtra("startPoint"));
+            endText.setText(getIntent().getStringExtra("endPoint"));
 
+        }
     }
 
     @Override
